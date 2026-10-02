@@ -342,10 +342,10 @@ nav a:hover {
   padding-left: 14px;
 }
 
-/* Anak grid harus boleh menyusut; kalau tidak strip tab dan project tree
-   memaksa kolom melebar lalu terpotong oleh overflow:hidden. */
-.cc-side,
-.cc-editor {
+/* .cc-side ikut display:flex dari aturan nav di style dasar, jadi harus
+   boleh menyusut; kalau tidak project tree memaksa kolom melebar lalu
+   terpotong oleh overflow:hidden. */
+.cc-side {
   min-width: 0;
 }
 
