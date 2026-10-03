@@ -94,12 +94,15 @@
 
   /* Periksa seluruh field, kembalikan field pertama yang bermasalah. */
   function periksaSemua() {
+    var pertama = null;
+
     for (var i = 0; i < ATURAN.length; i++) {
-      if (!periksa(ATURAN[i])) {
-        return ATURAN[i];
+      if (!periksa(ATURAN[i]) && !pertama) {
+        pertama = ATURAN[i];
       }
     }
-    return null;
+
+    return pertama;
   }
 
   /* Penghitung karakter untuk field pesan. */
@@ -120,9 +123,11 @@
       if (!aturan.input) {
         return;
       }
+
       aturan.input.addEventListener('blur', function () {
         periksa(aturan);
       });
+
       aturan.input.addEventListener('input', function () {
         if (aturan.input.getAttribute('aria-invalid') === 'true') {
           periksa(aturan);
