@@ -1,5 +1,5 @@
 /* CodeCraft Academy, bagian Profil.
-   Satu interaksi: buka dan tutup panel detail tiap kartu anggota. */
+   Satu interaksi: buka panel detail satu anggota, tutup yang lain. */
 (function () {
   'use strict';
 
@@ -15,43 +15,42 @@
     return;
   }
 
-  function detailFor(pemicu) {
-    return document.getElementById(pemicu.getAttribute('aria-controls'));
+  function detailFor(tombol) {
+    return document.getElementById(tombol.getAttribute('aria-controls'));
   }
 
-  function setState(pemicu, terbuka) {
-    var detail = detailFor(pemicu);
-    var kartu = pemicu.parentNode;
+  function setState(tombol, terbuka) {
+    var kartu = tombol.closest('.profil-kartu');
 
-    pemicu.setAttribute('aria-expanded', terbuka ? 'true' : 'false');
-    kartu.classList.toggle('is-terbuka', terbuka);
-
-    if (terbuka) {
-      detail.removeAttribute('hidden');
-    } else {
-      detail.setAttribute('hidden', '');
+    if (!kartu) {
+      return;
     }
+
+    tombol.setAttribute('aria-expanded', terbuka ? 'true' : 'false');
+    kartu.classList.toggle('is-terbuka', terbuka);
+    detailFor(tombol).setAttribute('aria-hidden', terbuka ? 'false' : 'true');
   }
 
-  function tutupSemua(kecuali) {
-    pemicu.forEach(function (item) {
-      if (item !== kecuali) {
-        setState(item, false);
+  function tutupLain(kecuali) {
+    pemicu.forEach(function (tombol) {
+      if (tombol !== kecuali) {
+        setState(tombol, false);
       }
     });
   }
 
-  pemicu.forEach(function (item, posisi) {
-    setState(item, false);
+  pemicu.forEach(function (tombol, posisi) {
+    setState(tombol, false);
 
-    item.addEventListener('click', function () {
-      var terbuka = item.getAttribute('aria-expanded') === 'true';
-      tutupSemua(item);
-      setState(item, !terbuka);
+    tombol.addEventListener('click', function () {
+      var terbuka = tombol.getAttribute('aria-expanded') === 'true';
+
+      tutupLain(tombol);
+      setState(tombol, !terbuka);
     });
 
-    item.addEventListener('keydown', function (event) {
-      var berikutnya = 0;
+    tombol.addEventListener('keydown', function (event) {
+      var berikutnya;
 
       switch (event.key) {
         case 'ArrowDown':
@@ -67,9 +66,7 @@
           berikutnya = pemicu.length - 1;
           break;
         case 'Escape':
-          if (item.getAttribute('aria-expanded') === 'true') {
-            setState(item, false);
-          }
+          setState(tombol, false);
           return;
         default:
           return;
