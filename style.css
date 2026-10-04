@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Inter Variable';
   margin: 0;
   padding: 0 24px;
 }
@@ -12,18 +12,491 @@ nav {
   display: flex;
   gap: 16px;
   padding: 16px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #1c1d20;
 }
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #8a8f98;
 }
 
 /* STYLE BAGIANMU DI SINI */
 
+/* Font lokal didaftarkan sekali di stylesheet ini karena scaffold memakai
+   'Inter Variable' pada body. Semua aturan warna, tipografi, dan tata letak
+   di bawah ini hanya berlaku di dalam #profil. */
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('fonts/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('fonts/Berkeley-Mono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Token diambil dari referensi dark theme, ditulis ulang untuk kebutuhan
+   bagian Profil ini saja. */
+#profil {
+  --profil-bg: #08090a;
+  --profil-panel: #0f1011;
+  --profil-panel-angkat: #141516;
+  --profil-garis: #1c1d20;
+  --profil-garis-1: #23252a;
+  --profil-garis-2: #34343a;
+  --profil-teks: #f7f8f8;
+  --profil-teks-1: #d0d6e0;
+  --profil-teks-2: #8a8f98;
+  --profil-teks-3: #62666d;
+  --profil-aksen: #7170ff;
+  --profil-radius: 8px;
+  --profil-radius-kecil: 6px;
+  --profil-cepat: 150ms;
+  --profil-durasi: 200ms;
+  --profil-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  box-sizing: border-box;
+  padding-block: 88px 96px;
+  border-top: 1px solid var(--profil-garis-1);
+  background-color: var(--profil-bg);
+  color: var(--profil-teks);
+  font-family: 'Inter Variable';
+  font-weight: 400;
+  font-feature-settings: 'cv01', 'ss03';
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color-scheme: dark;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#profil *,
+#profil *::before,
+#profil *::after {
+  box-sizing: border-box;
+}
+
+
+/* Kolom konten lebar dan terpusat, tidak membentang tepi ke tepi. */
+.profil-kontainer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: clamp(16px, 4vw, 56px);
+}
+
+/* Kepala bagian */
+.profil-kepala {
+  max-width: 680px;
+  margin-bottom: 52px;
+}
+
+.profil-kicker {
+  margin: 0 0 20px;
+  font-family: 'Berkeley Mono';
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--profil-teks-3);
+}
+
+.profil-judul {
+  margin: 0 0 20px;
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 590;
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+}
+
+.profil-terang {
+  max-width: 58ch;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+  color: var(--profil-teks-2);
+}
+
+/* Daftar anggota: satu panel dengan pembatas baris 1px, bukan kartu terpisah. */
+.profil-daftar {
+  margin: 0 0 64px;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--profil-garis-1);
+  border-radius: var(--profil-radius);
+  background-color: var(--profil-panel);
+  overflow: hidden;
+}
+
+.profil-kartu + .profil-kartu {
+  border-top: 1px solid var(--profil-garis-1);
+}
+
+.profil-kartu {
+  transition: background-color var(--profil-cepat) var(--profil-ease);
+}
+
+.profil-kartu:hover,
+.profil-kartu.is-terbuka {
+  background-color: var(--profil-panel-angkat);
+}
+
+.profil-pemicu {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  margin: 0;
+  padding: 18px 20px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.profil-pemicu:focus-visible {
+  outline: 2px solid var(--profil-aksen);
+  outline-offset: -2px;
+}
+
+.profil-avatar {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--profil-garis-2);
+  border-radius: var(--profil-radius-kecil);
+  object-fit: cover;
+  object-position: 50% 28%;
+  background-color: var(--profil-bg);
+}
+
+.profil-identitas {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profil-nama {
+  font-size: 16px;
+  font-weight: 590;
+  line-height: 1.35;
+  letter-spacing: -0.011em;
+  color: var(--profil-teks);
+}
+
+.profil-peran {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--profil-teks-2);
+}
+
+.profil-jejak {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--profil-teks-3);
+  white-space: nowrap;
+  transition: color var(--profil-cepat) var(--profil-ease);
+}
+
+.profil-jejak::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translate(-1px, -1px);
+  transition: transform var(--profil-durasi) var(--profil-ease);
+}
+
+.profil-kartu:hover .profil-jejak,
+.profil-kartu.is-terbuka .profil-jejak {
+  color: var(--profil-teks-1);
+}
+
+.profil-kartu.is-terbuka .profil-jejak::after {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+/* Panel detail yang bisa dibuka */
+.profil-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--profil-durasi) var(--profil-ease);
+}
+
+.profil-detail-isi {
+  min-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0s linear var(--profil-durasi);
+}
+
+.profil-kartu.is-terbuka .profil-detail {
+  grid-template-rows: 1fr;
+}
+
+.profil-kartu.is-terbuka .profil-detail-isi {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.profil-bio {
+  max-width: 68ch;
+  margin: 0;
+  padding: 20px 20px 0;
+  border-top: 1px solid var(--profil-garis-1);
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: -0.011em;
+  color: var(--profil-teks-2);
+}
+
+/* Fakta tanpa kotak, hanya pemisah kolom 1px. */
+.profil-fakta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 22px 20px 20px;
+}
+
+.profil-fakta-baris {
+  padding-left: 18px;
+}
+
+.profil-fakta-baris + .profil-fakta-baris {
+  border-left: 1px solid var(--profil-garis);
+}
+
+.profil-fakta dt {
+  margin: 0 0 7px;
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--profil-teks-3);
+}
+
+.profil-fakta dd {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: -0.011em;
+  color: var(--profil-teks-1);
+}
+
+/* Tabel data program */
+.profil-tabel-bungkus {
+  border: 1px solid var(--profil-garis-1);
+  border-radius: var(--profil-radius);
+  background-color: var(--profil-panel);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.profil-tabel {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: -0.011em;
+}
+
+.profil-tabel-judul {
+  caption-side: top;
+  text-align: left;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--profil-garis-1);
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--profil-teks-3);
+}
+
+.profil-tabel th,
+.profil-tabel td {
+  text-align: left;
+  vertical-align: top;
+}
+
+.profil-tabel thead th {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--profil-garis-1);
+  background-color: var(--profil-bg);
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--profil-teks-3);
+  white-space: nowrap;
+}
+
+.profil-tabel tbody th,
+.profil-tabel tbody td {
+  padding: 11px 20px;
+  border-bottom: 1px solid var(--profil-garis);
+}
+
+.profil-tabel thead th + th,
+.profil-tabel tbody th + td,
+.profil-tabel tbody td + td {
+  border-left: 1px solid var(--profil-garis);
+}
+
+.profil-tabel tbody th {
+  font-weight: 510;
+  color: var(--profil-teks);
+  white-space: nowrap;
+}
+
+.profil-tabel tbody td {
+  color: var(--profil-teks-2);
+}
+
+.profil-tabel tbody tr:last-child th,
+.profil-tabel tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.profil-tabel tbody tr {
+  transition: background-color var(--profil-cepat) var(--profil-ease);
+}
+
+.profil-tabel tbody tr:hover th,
+.profil-tabel tbody tr:hover td {
+  background-color: var(--profil-panel-angkat);
+}
+
+/* Lebar layar kecil */
+@media (max-width: 720px) {
+  #profil {
+    padding-block: 64px 72px;
+  }
+
+  .profil-kepala {
+    margin-bottom: 40px;
+  }
+
+  .profil-terang {
+    font-size: 16px;
+  }
+
+  .profil-daftar {
+    margin-bottom: 48px;
+  }
+
+  .profil-pemicu {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 4px 16px;
+    padding: 16px;
+  }
+
+  .profil-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .profil-jejak {
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+
+  .profil-bio {
+    padding: 18px 16px 0;
+    font-size: 14px;
+  }
+
+  .profil-fakta {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 18px 16px 16px;
+  }
+
+  .profil-fakta-baris {
+    padding-left: 0;
+    padding-top: 14px;
+  }
+
+  .profil-fakta-baris + .profil-fakta-baris {
+    margin-top: 14px;
+    border-top: 1px solid var(--profil-garis);
+    border-left: 0;
+  }
+
+  .profil-tabel-judul,
+  .profil-tabel thead th,
+  .profil-tabel tbody th,
+  .profil-tabel tbody td {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  #profil {
+    padding-block: 52px 60px;
+  }
+
+  .profil-kepala {
+    margin-bottom: 32px;
+  }
+
+  .profil-pemicu {
+    padding: 14px;
+  }
+
+  .profil-nama {
+    font-size: 15px;
+  }
+
+  .profil-peran {
+    font-size: 13px;
+  }
+
+  .profil-bio {
+    padding: 16px 14px 0;
+  }
+
+  .profil-fakta {
+    margin: 16px 14px 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #profil *,
+  #profil *::before,
+  #profil *::after {
+    transition-duration: 1ms;
 /* ------------------------------------------------------------------
-   Beranda — CodeCraft Academy
+   Beranda ╬ô├ç├╢ CodeCraft Academy
    Tipografi dan token warna diturunkan dari sistem dark UI pada
    referensi: canvas near-black, panel berlapis, border putih
    transparan, teks putih soft + muted. Ditulis ulang dari nol,

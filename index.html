@@ -2,7 +2,7 @@
 <html lang="id" class="no-js">
 <head>
   <meta charset=UTF-8>
-  <title>Ini Aja — Project CBL</title>
+  <title>Ini Aja ╬ô├ç├╢ Project CBL</title>
   <link rel=stylesheet href=style.css>
 </head>
 <body>
@@ -20,6 +20,161 @@
   <p>Belajar Coding Praktis, Bangun Proyek Nyata.</p>
 
   <main>
+    <!-- KONTEN BAGIANMU DI SINI -->
+     <section>Beranda</section>
+    <section id="profil" aria-labelledby="profil-judul">
+      <div class="profil-kontainer">
+        <header class="profil-kepala">
+          <p class="profil-kicker">Profil</p>
+          <h2 class="profil-judul" id="profil-judul">Tim CodeCraft Academy</h2>
+          <p class="profil-terang">
+            CodeCraft Academy dibangun oleh dua anggota yang membagi halaman ini per bagian.
+            Setiap anggota memegang satu bidang saja, mulai dari halaman depan sampai halaman
+            kontak, agar setiap bagian bisa dikerjakan dan diperiksa secara terpisah.
+          </p>
+        </header>
+
+        <ul class="profil-daftar">
+          <li class="profil-kartu" data-anggota="alfar1zi">
+            <button
+              class="profil-pemicu"
+              type="button"
+              id="profil-pemicu-alfar1zi"
+              aria-expanded="false"
+              aria-controls="profil-detail-alfar1zi">
+              <img
+                class="profil-avatar"
+                src="images/profil-anggota-1.jpg"
+                alt="Foto profil alfar1zi, anggota tim CodeCraft Academy yang menangani bagian Beranda"
+                width="56"
+                height="56"
+                decoding="async">
+              <span class="profil-identitas">
+                <span class="profil-nama">alfar1zi</span>
+                <span class="profil-peran">Frontend Engineer</span>
+              </span>
+              <span class="profil-jejak">Bagian Beranda</span>
+            </button>
+            <div
+              class="profil-detail"
+              id="profil-detail-alfar1zi"
+              role="group"
+              aria-labelledby="profil-pemicu-alfar1zi"
+              aria-hidden="true">
+              <div class="profil-detail-isi">
+                <p class="profil-bio">
+                  Menyusun struktur awal repository dan menangani bagian Beranda pada website
+                  CodeCraft Academy. Fokusnya pada tata letak halaman depan, hierarki visual,
+                  dan alur navigasi antar bagian. Kontribusinya tercatat pada branch
+                  feat/beranda.
+                </p>
+                <dl class="profil-fakta">
+                  <div class="profil-fakta-baris">
+                    <dt>Bagian</dt>
+                    <dd>Beranda</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Branch</dt>
+                    <dd>feat/beranda</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Fokus</dt>
+                    <dd>Struktur halaman, tipografi, navigasi</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </li>
+
+          <li class="profil-kartu" data-anggota="alsimly">
+            <button
+              class="profil-pemicu"
+              type="button"
+              id="profil-pemicu-alsimly"
+              aria-expanded="false"
+              aria-controls="profil-detail-alsimly">
+              <img
+                class="profil-avatar"
+                src="images/profil-anggota-2.jpg"
+                alt="Foto profil alsimly, pemilik repository CodeCraft Academy yang menangani bagian Profil dan Kontak"
+                width="56"
+                height="56"
+                decoding="async">
+              <span class="profil-identitas">
+                <span class="profil-nama">alsimly</span>
+                <span class="profil-peran">Repository Owner</span>
+              </span>
+              <span class="profil-jejak">Bagian Profil + Kontak</span>
+            </button>
+            <div
+              class="profil-detail"
+              id="profil-detail-alsimly"
+              role="group"
+              aria-labelledby="profil-pemicu-alsimly"
+              aria-hidden="true">
+              <div class="profil-detail-isi">
+                <p class="profil-bio">
+                  Pemilik repository CodeCraft Academy dan penanggung jawab untuk bagian
+                  Profil serta Kontak. Menangani isi halaman profil, tabel informasi program,
+                  dan interaksi antarmuka di dalamnya. Menjaga seluruh halaman tetap berjalan
+                  dari satu file index.html tanpa build tool.
+                </p>
+                <dl class="profil-fakta">
+                  <div class="profil-fakta-baris">
+                    <dt>Bagian</dt>
+                    <dd>Profil + Kontak</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Branch</dt>
+                    <dd>feat/profil, feat/kontak</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Fokus</dt>
+                    <dd>Isi profil, tabel program, formulir kontak</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="profil-tabel-bungkus">
+          <table class="profil-tabel">
+            <caption class="profil-tabel-judul">
+              Daftar program yang ditawarka CodeCraft Academy
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Program</th>
+                <th scope="col">Level</th>
+                <th scope="col">Durasi</th>
+                <th scope="col">Fokus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Web Fundamentals</th>
+                <td>Pemula</td>
+                <td>8 minggu</td>
+                <td>HTML, CSS, dan JavaScript dasar</td>
+              </tr>
+              <tr>
+                <th scope="row">Backend Engineering</th>
+                <td>Menengah</td>
+                <td>12 minggu</td>
+                <td>API, basis data, dan keamanan</td>
+              </tr>
+              <tr>
+                <th scope="row">Full Stack Academy</th>
+                <td>Lanjutan</td>
+                <td>24 minggu</td>
+                <td>Arsitektur aplikasi, code review, dan deploy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
     <section id="beranda" class="cc">
       <div class="cc-hero">
         <p class="cc-kicker">CodeCraft Academy</p>
@@ -248,5 +403,7 @@ Kirim PR sebelum Jumat.</code></pre>
       praktis dan proyek nyata bersama tim kami.
      </p>
   </main>
+
+  <script src="profil.js"></script>
 </body>
 </html>
