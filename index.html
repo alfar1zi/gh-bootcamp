@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang=
-id>
+<html lang="id" class="no-js">
 <head>
   <meta charset=UTF-8>
-  <meta name=viewport content="width=device-width, initial-scale=1">
-  <title>[Nama Kelompok] — Project CBL</title>
+  <title>Ini Aja ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬úΓö£┬║╬ô├╢┬ú╬ô├▓├│ Project CBL</title>
   <link rel=stylesheet href=style.css>
 </head>
 <body>
-  <nav>
-    <a href=#beranda>Beranda</a>
-    <a href=#profil>Profil</a>
-    <a href=#kontak>Kontak</a>
+  <nav class="cc-nav">
+    <span class="cc-nav-brand">CodeCraft Academy</span>
+    <ul class="cc-nav-list">
+      <li><a href=#beranda>Beranda</a></li>
+      <li><a href=#profil>Profil</a></li>
+      <li><a href=#kontak>Kontak</a></li>
+    </ul>
+    <a class="cc-nav-pill" href=#kontak>Daftar</a>
   </nav>
 
-  <h1>Selamat Datang</h1>
+  <h1>CodeCraft Academy</h1>
+  <p>Belajar Coding Praktis, Bangun Proyek Nyata.</p>
 
   <main>
     <section id="kontak" class="kontak" aria-labelledby="kontak-judul">
@@ -119,8 +122,389 @@ id>
       </div>
     </section>
      <section>Beranda</section>
+    <section id="profil" aria-labelledby="profil-judul">
+      <div class="profil-kontainer">
+        <header class="profil-kepala">
+          <p class="profil-kicker">Profil</p>
+          <h2 class="profil-judul" id="profil-judul">Tim CodeCraft Academy</h2>
+          <p class="profil-terang">
+            CodeCraft Academy dibangun oleh dua anggota yang membagi halaman ini per bagian.
+            Setiap anggota memegang satu bidang saja, mulai dari halaman depan sampai halaman
+            kontak, agar setiap bagian bisa dikerjakan dan diperiksa secara terpisah.
+          </p>
+        </header>
+
+        <ul class="profil-daftar">
+          <li class="profil-kartu" data-anggota="alfar1zi">
+            <button
+              class="profil-pemicu"
+              type="button"
+              id="profil-pemicu-alfar1zi"
+              aria-expanded="false"
+              aria-controls="profil-detail-alfar1zi">
+              <img
+                class="profil-avatar"
+                src="images/profil-anggota-1.jpg"
+                alt="Foto profil alfar1zi, anggota tim CodeCraft Academy yang menangani bagian Beranda"
+                width="56"
+                height="56"
+                decoding="async">
+              <span class="profil-identitas">
+                <span class="profil-nama">alfar1zi</span>
+                <span class="profil-peran">Frontend Engineer</span>
+              </span>
+              <span class="profil-jejak">Bagian Beranda</span>
+            </button>
+            <div
+              class="profil-detail"
+              id="profil-detail-alfar1zi"
+              role="group"
+              aria-labelledby="profil-pemicu-alfar1zi"
+              aria-hidden="true">
+              <div class="profil-detail-isi">
+                <p class="profil-bio">
+                  Menyusun struktur awal repository dan menangani bagian Beranda pada website
+                  CodeCraft Academy. Fokusnya pada tata letak halaman depan, hierarki visual,
+                  dan alur navigasi antar bagian. Kontribusinya tercatat pada branch
+                  feat/beranda.
+                </p>
+                <dl class="profil-fakta">
+                  <div class="profil-fakta-baris">
+                    <dt>Bagian</dt>
+                    <dd>Beranda</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Branch</dt>
+                    <dd>feat/beranda</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Fokus</dt>
+                    <dd>Struktur halaman, tipografi, navigasi</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </li>
+
+          <li class="profil-kartu" data-anggota="alsimly">
+            <button
+              class="profil-pemicu"
+              type="button"
+              id="profil-pemicu-alsimly"
+              aria-expanded="false"
+              aria-controls="profil-detail-alsimly">
+              <img
+                class="profil-avatar"
+                src="images/profil-anggota-2.jpg"
+                alt="Foto profil alsimly, pemilik repository CodeCraft Academy yang menangani bagian Profil dan Kontak"
+                width="56"
+                height="56"
+                decoding="async">
+              <span class="profil-identitas">
+                <span class="profil-nama">alsimly</span>
+                <span class="profil-peran">Repository Owner</span>
+              </span>
+              <span class="profil-jejak">Bagian Profil + Kontak</span>
+            </button>
+            <div
+              class="profil-detail"
+              id="profil-detail-alsimly"
+              role="group"
+              aria-labelledby="profil-pemicu-alsimly"
+              aria-hidden="true">
+              <div class="profil-detail-isi">
+                <p class="profil-bio">
+                  Pemilik repository CodeCraft Academy dan penanggung jawab untuk bagian
+                  Profil serta Kontak. Menangani isi halaman profil, tabel informasi program,
+                  dan interaksi antarmuka di dalamnya. Menjaga seluruh halaman tetap berjalan
+                  dari satu file index.html tanpa build tool.
+                </p>
+                <dl class="profil-fakta">
+                  <div class="profil-fakta-baris">
+                    <dt>Bagian</dt>
+                    <dd>Profil + Kontak</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Branch</dt>
+                    <dd>feat/profil, feat/kontak</dd>
+                  </div>
+                  <div class="profil-fakta-baris">
+                    <dt>Fokus</dt>
+                    <dd>Isi profil, tabel program, formulir kontak</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="profil-tabel-bungkus">
+          <table class="profil-tabel">
+            <caption class="profil-tabel-judul">
+              Daftar program yang ditawarka CodeCraft Academy
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Program</th>
+                <th scope="col">Level</th>
+                <th scope="col">Durasi</th>
+                <th scope="col">Fokus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Web Fundamentals</th>
+                <td>Pemula</td>
+                <td>8 minggu</td>
+                <td>HTML, CSS, dan JavaScript dasar</td>
+              </tr>
+              <tr>
+                <th scope="row">Backend Engineering</th>
+                <td>Menengah</td>
+                <td>12 minggu</td>
+                <td>API, basis data, dan keamanan</td>
+              </tr>
+              <tr>
+                <th scope="row">Full Stack Academy</th>
+                <td>Lanjutan</td>
+                <td>24 minggu</td>
+                <td>Arsitektur aplikasi, code review, dan deploy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section id="beranda" class="cc">
+      <div class="cc-hero">
+        <p class="cc-kicker">CodeCraft Academy</p>
+        <h2 class="cc-headline">Belajar membangun software,<br>bukan sekadar hafal sintaks.</h2>
+        <p class="cc-lede">
+          Setiap modul berakhir dengan kode yang benar-benar jalan, lalu ditinjau mentor
+          dan masuk ke portofolio kamu.
+        </p>
+        <a class="cc-cta" href="#kontak">Mulai Belajar <span class="cc-cta-arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+
+
+      <div class="cc-stage" data-reveal>
+        <div class="cc-ide" id="cc-ide">
+          <div class="cc-ide-bar">
+            <span class="cc-ide-title">
+              <span class="cc-ide-dot" aria-hidden="true"></span>
+              workspace / academy
+
+            </span>
+            <div class="cc-ide-actions">
+              <button type="button" class="cc-ide-btn" id="cc-preview-toggle" aria-pressed="false">
+                Preview
+              </button>
+              <button type="button" class="cc-ide-btn cc-ide-btn-primary" id="cc-run">
+                <span class="cc-ide-run-icon" aria-hidden="true">&#9654;</span>
+                Run
+              </button>
+            </div>
+          </div>
+
+          <div class="cc-ide-body">
+            <nav class="cc-side" aria-label="Navigasi workspace">
+              <p class="cc-side-label">Workspace</p>
+              <ul class="cc-side-list" role="list">
+                <li>
+                  <button type="button" class="cc-side-item is-active" data-view="modul" aria-current="true">
+                    Modul
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="cc-side-item" data-view="proyek">Proyek</button>
+                </li>
+                <li>
+                  <button type="button" class="cc-side-item" data-view="mentor">Mentor</button>
+                </li>
+                <li>
+                  <button type="button" class="cc-side-item" data-view="nilai">Nilai</button>
+                </li>
+              </ul>
+
+              <p class="cc-side-label">Project tree</p>
+              <ul class="cc-tree" role="list">
+                <li>
+                  <button type="button" class="cc-tree-folder" data-tree="kelas"
+                          aria-expanded="true" aria-controls="cc-tree-kelas">
+                    <span class="cc-caret" aria-hidden="true"></span>kelas/
+                  </button>
+                  <ul class="cc-tree-list" id="cc-tree-kelas" role="list">
+                    <li><button type="button" class="cc-tree-file" data-open="modul-04">modul-04.html</button></li>
+                    <li><button type="button" class="cc-tree-file" data-open="latihan-02">latihan-02.js</button></li>
+                  </ul>
+                </li>
+                <li>
+                  <button type="button" class="cc-tree-folder" data-tree="ujian"
+                          aria-expanded="true" aria-controls="cc-tree-ujian">
+                    <span class="cc-caret" aria-hidden="true"></span>ujian/
+                  </button>
+                  <ul class="cc-tree-list" id="cc-tree-ujian" role="list">
+                    <li><button type="button" class="cc-tree-file" data-open="soal">soal.md</button></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="cc-editor">
+              <div class="cc-tabs" role="tablist" aria-label="Berkas terbuka">
+                <button type="button" class="cc-tab is-active" role="tab" id="tab-modul-04"
+                        data-tab="modul-04" aria-selected="true" aria-controls="cc-panel">modul-04.html</button>
+                <button type="button" class="cc-tab" role="tab" id="tab-latihan-02"
+                        data-tab="latihan-02" aria-selected="false" aria-controls="cc-panel" tabindex="-1">latihan-02.js</button>
+                <button type="button" class="cc-tab" role="tab" id="tab-soal"
+                        data-tab="soal" aria-selected="false" aria-controls="cc-panel" tabindex="-1">soal.md</button>
+              </div>
+
+              <div class="cc-code" id="cc-panel" role="tabpanel" aria-labelledby="tab-modul-04" tabindex="0">
+                <pre class="cc-code-block" data-code="modul-04"><code><span class="t-tag">&lt;section</span> <span class="t-attr">class</span>=<span class="t-str">"modul"</span><span class="t-tag">&gt;</span>
+  <span class="t-tag">&lt;h2&gt;</span>Validasi Formulir<span class="t-tag">&lt;/h2&gt;</span>
+
+  <span class="t-tag">&lt;form</span> <span class="t-attr">id</span>=<span class="t-str">"daftar"</span><span class="t-tag">&gt;</span>
+    <span class="t-tag">&lt;label</span> <span class="t-attr">for</span>=<span class="t-str">"email"</span><span class="t-tag">&gt;</span>Email<span class="t-tag">&lt;/label&gt;</span>
+    <span class="t-tag">&lt;input</span> <span class="t-attr">id</span>=<span class="t-str">"email"</span> <span class="t-attr">type</span>=<span class="t-str">"email"</span> <span class="t-attr">required</span><span class="t-tag">&gt;</span>
+    <span class="t-tag">&lt;button</span> <span class="t-attr">type</span>=<span class="t-str">"submit"</span><span class="t-tag">&gt;</span>Daftar<span class="t-tag">&lt;/button&gt;</span>
+  <span class="t-tag">&lt;/form&gt;</span>
+
+  <span class="t-tag">&lt;script</span> <span class="t-attr">src</span>=<span class="t-str">"latihan-02.js"</span><span class="t-tag">&gt;&lt;/script&gt;</span>
+<span class="t-tag">&lt;/section&gt;</span></code></pre>
+
+                <pre class="cc-code-block" data-code="latihan-02" hidden><code><span class="t-cmt">// Validasi sisi klien sebelum dikirim</span>
+<span class="t-kw">const</span> form = <span class="t-fn">document</span>.<span class="t-fn">querySelector</span>(<span class="t-str">'#daftar'</span>);
+
+form.<span class="t-fn">addEventListener</span>(<span class="t-str">'submit'</span>, (event) =&gt; {
+  event.<span class="t-fn">preventDefault</span>();
+
+  <span class="t-kw">const</span> email = form.email.value.<span class="t-fn">trim</span>();
+
+  <span class="t-kw">if</span> (!email.<span class="t-fn">includes</span>(<span class="t-str">'@'</span>)) {
+    <span class="t-fn">alert</span>(<span class="t-str">'Email tidak valid'</span>);
+    <span class="t-kw">return</span>;
+  }
+
+  <span class="t-fn">console</span>.<span class="t-fn">log</span>(<span class="t-str">'mengirim'</span>, email);
+});</code></pre>
+
+                <pre class="cc-code-block" data-code="soal" hidden><code><span class="t-h"># Tugas Modul 04</span>
+
+Buat <span class="t-str">validasi formulir</span> tanpa library.
+
+<span class="t-kw">## Kriteria</span>
++- [x] Email wajib diisi
++- [x] Pesan error tampil jelas
++- [ ] Kirim ke API (nilai +20)
+
+<span class="t-kw">## Catatan mentor</span>
+Gunakan <span class="t-str">trim()</span> sebelum validasi.
+Kirim PR sebelum Jumat.</code></pre>
+              </div>
+
+              <div class="cc-output" id="cc-output">
+                <p class="cc-output-head">
+                  <span class="cc-output-title">Output</span>
+                  <span class="cc-output-status" id="cc-status">Siap</span>
+                </p>
+                <pre class="cc-output-body" id="cc-output-body">Klik <strong>Run</strong> untuk menjalankan berkas aktif.</pre>
+              </div>
+
+              <p class="cc-statusbar">
+                <span id="cc-context">Modul &middot; minggu 4 dari 16</span>
+                <span class="cc-statusbar-right">
+                  <span class="cc-statusbar-meta">UTF-8 &middot; LF &middot; 12 baris</span>
+                  <span class="cc-statusbar-nav">
+                    <button type="button" class="cc-step" id="cc-prev" aria-label="Berkas sebelumnya">&larr;</button>
+                    <button type="button" class="cc-step" id="cc-next" aria-label="Berkas berikutnya">&rarr;</button>
+                  </span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-split" data-reveal>
+        <div class="cc-split-copy">
+          <h2 class="cc-title">Latihan pendek, hasil yang bisa ditunjukkan.</h2>
+        </div>
+
+        <div class="cc-split-body">
+          <p class="cc-par">
+            Kamu mendapat satu tugas kecil per sesi, lalu bergerak dari kode contoh sampai
+            versi yang berjalan sendiri. Tidak ada slideshow panjang.
+          </p>
+          <ul class="cc-points" role="list">
+            <li class="cc-point">
+              <h3 class="cc-point-title">Semua di satu workspace</h3>
+              <p class="cc-point-text">
+                Materi, berkas latihan, dan review mentor berada di tempat yang sama,
+                jadi tidak ada berkas yang tercecer di luar folder.
+              </p>
+            </li>
+            <li class="cc-point">
+              <h3 class="cc-point-title">Standar kode yang konsisten</h3>
+              <p class="cc-point-text">
+                Setiap kiriman dinilai dari keterbacaan, penanganan error, dan
+                aksesibilitas, bukan sekadar bisa jalan.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="cc-figure" data-reveal>
+        <img
+          src="images/peta-kurikulum.svg"
+          alt="Peta kurikulum CodeCraft Academy: lima tahap dari HTML dan CSS, JavaScript, Python, UI/UX, sampai portofolio, tersebar selama 16 minggu. Empat tahap pertama ditandai selesai dan Portofolio ditandai terjadwal." />
+        <figcaption class="cc-figure-cap">
+          Alur 16 minggu, dari sintaks dasar sampai karya yang rilis.
+        </figcaption>
+      </figure>
+
+      <div class="cc-lanes" data-reveal>
+        <h2 class="cc-title">Tiga jalur, satu standar kerja.</h2>
+        <ul class="cc-cards" role="list">
+          <li class="cc-card">
+            <p class="cc-card-index">01</p>
+            <h3 class="cc-card-title">Web Development</h3>
+            <p class="cc-card-text">
+              Bangun halaman yang benar-benar jalan: HTML, CSS, dan
+              JavaScript, sampai versi yang bisa dikirim ke pengguna.
+            </p>
+          </li>
+          <li class="cc-card">
+            <p class="cc-card-index">02</p>
+            <h3 class="cc-card-title">Python Programming</h3>
+            <p class="cc-card-text">
+              Otomasi pekerjaan berulang dan olah data dengan kode yang
+              ringkas, terbaca, dan mudah dirawat.
+            </p>
+          </li>
+          <li class="cc-card">
+            <p class="cc-card-index">03</p>
+            <h3 class="cc-card-title">UI/UX Design</h3>
+            <p class="cc-card-text">
+              Rancang alur yang enak dipakai, lalu turunkan ke komponen
+              yang konsisten di seluruh aplikasi.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <p class="cc-sr-only">Bagian ini adalah Beranda CodeCraft Academy.</p>
+
+      <script src="beranda.js"></script>
+    </section>
+     <p>Selamat datang di CodeCraft Academy!
+      Pelajari keterampilan coding melalui materi
+      praktis dan proyek nyata bersama tim kami.
+     </p>
   </main>
   <script src="kontak.js" charset="utf-8"></script>
+
+  <script src="profil.js"></script>
 </body>
 </html>
-
