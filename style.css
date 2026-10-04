@@ -20,8 +20,14 @@ nav a {
   color: #8a8f98;
 }
 
-/* STYLE BAGIANMU DI SINI */
+/* ============================================================
+   CODE CRAFT ACADEMY
+   Bagian: Kontak (#kontak)
+   Huruf lokal: Inter Variable + Berkeley Mono
+   Token warna, radius, dan motion mengikuti design system
+   ============================================================ */
 
+/* ---------- Font lokal ---------- */
 /* Font lokal didaftarkan sekali di stylesheet ini karena scaffold memakai
    'Inter Variable' pada body. Semua aturan warna, tipografi, dan tata letak
    di bawah ini hanya berlaku di dalam #profil. */
@@ -41,6 +47,670 @@ nav a {
   font-display: swap;
 }
 
+/* ---------- Token lokal Kontak ---------- */
+#kontak {
+  --k-bg: #08090a;
+  --k-panel: #0f1011;
+  --k-lift: #141516;
+  --k-field: #08090a;
+  --k-text: #f7f8f8;
+  --k-text-2: #d0d6e0;
+  --k-text-3: #8a8f98;
+
+  /* #62666d hanya lolos 3.4:1 di atas #08090a, jadi teks sekunder
+     memakai #8a8f98 (6.1:1) agar tetapsunyi tanpa gagal kontras AA. */
+  --k-line: #23252a;
+  --k-line-2: #34343a;
+  --k-accent: #7170ff;
+  --k-danger: #eb5757;
+  --k-r: 8px;
+  --k-r-sm: 6px;
+  --k-fast: 110ms;
+  --k-dur: 200ms;
+  --k-ease: cubic-bezier(0.32, 0.72, 0, 1);
+
+  box-sizing: border-box;
+  font-family: 'Inter Variable';
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-feature-settings: 'cv01', 'ss03';
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  color: var(--k-text);
+  background-color: var(--k-bg);
+  border-top: 1px solid var(--k-line);
+  padding-block: 104px 112px;
+  padding-inline: clamp(24px, 6vw, 88px);
+  margin-inline: -24px;
+  color-scheme: dark;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#kontak *,
+#kontak *::before,
+#kontak *::after {
+  box-sizing: border-box;
+}
+
+#kontak [hidden] {
+  display: none !important;
+}
+
+/* ---------- Kolom konten ---------- */
+.kontak__inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ---------- Kepala bagian ---------- */
+.kontak__head {
+  max-width: 700px;
+  margin-bottom: 76px;
+}
+
+.kontak__kicker {
+  margin: 0 0 22px;
+  font-family: 'Berkeley Mono';
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+
+.kontak__judul {
+  margin: 0 0 20px;
+  font-size: clamp(30px, 4.4vw, 48px);
+  font-weight: 510;
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  color: var(--k-text);
+  text-wrap: balance;
+}
+
+.kontak__deskripsi {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--k-text-3);
+}
+
+/* ---------- Layout editorial ---------- */
+.kontak__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 296px;
+  gap: 72px;
+  align-items: start;
+}
+
+.kontak__main,
+.kontak__meta {
+  min-width: 0;
+}
+
+/* Baris pertama metadata sejajar dengan baris judul panel. */
+.kontak__meta {
+  padding-top: 18px;
+}
+
+/* ---------- Permukaan kerja ---------- */
+.kontak__panel {
+  background-color: var(--k-panel);
+  border: 1px solid var(--k-line);
+  border-radius: var(--k-r);
+}
+
+.kontak__panel-head,
+.kontak__panel-body,
+.kontak__panel-foot,
+.kontak__field {
+  padding-inline: 32px;
+}
+
+.kontak__panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 18px;
+  border-bottom: 1px solid var(--k-line);
+}
+
+.kontak__panel-body {
+  padding-block: 24px;
+  border-bottom: 1px solid var(--k-line);
+}
+
+.kontak__panel-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding-block: 18px;
+}
+
+.kontak__panel-judul-teks {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 510;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+  color: var(--k-text);
+}
+
+.kontak__panel-meta {
+  margin: 0;
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+
+/* ---------- Field ---------- */
+.kontak__field {
+  display: grid;
+  gap: 10px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--k-line);
+}
+
+.kontak__field-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.kontak__label {
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+
+.kontak__input {
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-family: 'Inter Variable';
+  font-optical-sizing: auto;
+  font-feature-settings: 'cv01', 'ss03';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  color: var(--k-text);
+  caret-color: var(--k-accent);
+  background-color: var(--k-field);
+  border: 1px solid var(--k-line);
+  border-radius: var(--k-r-sm);
+  transition: border-color var(--k-fast) var(--k-ease);
+}
+
+.kontak__input::placeholder {
+  color: var(--k-text-3);
+  opacity: 1;
+}
+
+.kontak__textarea {
+  height: auto;
+  min-height: 132px;
+  padding: 11px 12px;
+  line-height: 21px;
+  resize: vertical;
+}
+
+/* ---------- Pesan error ---------- */
+.kontak__error {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.006em;
+  color: var(--k-danger);
+}
+
+.kontak__error:empty {
+  display: none;
+}
+
+/* ---------- Penghitung karakter ---------- */
+.kontak__hitung {
+  margin: 0;
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: var(--k-text-3);
+  white-space: nowrap;
+  transition: color var(--k-fast) var(--k-ease);
+}
+
+.kontak__hitung--dekat {
+  color: var(--k-text-2);
+}
+
+.kontak__hitung--penuh {
+  color: var(--k-danger);
+}
+
+/* ---------- Aksi ---------- */
+.kontak__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 14px;
+  font-family: 'Inter Variable';
+  font-optical-sizing: auto;
+  font-feature-settings: 'cv01', 'ss03';
+  font-size: 13px;
+  font-weight: 510;
+  line-height: 1;
+  letter-spacing: -0.006em;
+  color: var(--k-bg);
+  background-color: var(--k-text);
+  border: 1px solid transparent;
+  border-radius: var(--k-r-sm);
+  cursor: pointer;
+  transition: background-color var(--k-fast) var(--k-ease),
+    color var(--k-fast) var(--k-ease),
+    border-color var(--k-fast) var(--k-ease);
+}
+
+.kontak__submit[disabled] {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+.kontak__submit--ghost {
+  color: var(--k-text-2);
+  background-color: transparent;
+  border-color: var(--k-line-2);
+}
+
+/* ---------- State sukses ---------- */
+.kontak__sukses-judul {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 510;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+  color: var(--k-text);
+}
+
+.kontak__sukses-judul:focus {
+  outline: 2px solid var(--k-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.kontak__sukses-ikon {
+  flex: none;
+  color: var(--k-accent);
+}
+
+.kontak__sukses-teks {
+  max-width: 58ch;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--k-text-2);
+  overflow-wrap: anywhere;
+}
+
+.kontak__sukses-catatan {
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--k-text-3);
+}
+
+/* ---------- Metadata kontak ---------- */
+.kontak__panel-judul {
+  margin: 0 0 16px;
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+
+.kontak__panel-judul--sub {
+  margin-top: 44px;
+}
+
+.kontak__list,
+.kontak__daftar-tautan {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kontak__item {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: 1px solid var(--k-line);
+}
+
+.kontak__item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.kontak__item-label {
+  font-family: 'Berkeley Mono';
+  font-size: 11px;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-text-3);
+}
+
+.kontak__item-nilai {
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--k-text-2);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Tautan teks ---------- */
+.kontak__tautan {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--k-text-2);
+  text-decoration: none;
+  transition: color var(--k-fast) var(--k-ease);
+}
+
+.kontak__daftar-tautan .kontak__tautan {
+  width: 100%;
+  justify-content: space-between;
+  justify-self: stretch;
+}
+
+.kontak__tautan-baris {
+  padding: 12px 0;
+  border-top: 1px solid var(--k-line);
+  transition: background-color var(--k-fast) var(--k-ease);
+}
+
+.kontak__tautan-baris:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.kontak__panah {
+  flex: none;
+  transition: transform var(--k-dur) var(--k-ease);
+}
+
+/* ============================================================
+   State interaksi, focus, dan motion
+   ============================================================ */
+
+/* ---------- Hover ---------- */
+.kontak__input:hover {
+  border-color: var(--k-line-2);
+}
+
+.kontak__input:focus {
+  outline: 2px solid var(--k-accent);
+  outline-offset: 2px;
+  border-color: var(--k-accent);
+}
+
+.kontak__input[aria-invalid='true'] {
+  border-color: var(--k-danger);
+}
+
+.kontak__submit:hover {
+  background-color: var(--k-text-2);
+}
+
+.kontak__submit--ghost:hover {
+  color: var(--k-text);
+  background-color: var(--k-lift);
+  border-color: var(--k-line-2);
+}
+
+.kontak__tautan:hover,
+.kontak__tautan-baris:hover .kontak__tautan {
+  color: var(--k-text);
+}
+
+.kontak__tautan:hover .kontak__panah,
+.kontak__tautan-baris:hover .kontak__panah {
+  transform: translate(2px, -2px);
+}
+
+/* ---------- Focus ---------- */
+.kontak__submit:focus-visible,
+.kontak__tautan:focus-visible {
+  outline: 2px solid var(--k-accent);
+  outline-offset: 2px;
+  border-radius: var(--k-r-sm);
+}
+
+.kontak__tautan:focus-visible {
+  outline-offset: 3px;
+}
+
+/* ---------- Reveal ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .kontak__head,
+  .kontak__grid {
+    animation: kontak-masuk 220ms var(--k-ease) both;
+  }
+
+  .kontak__grid {
+    animation-delay: 60ms;
+  }
+}
+
+@keyframes kontak-masuk {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Motion submit ---------- */
+.kontak__sukses {
+  animation: kontak-sukses-masuk var(--k-dur) var(--k-ease) both;
+}
+
+@keyframes kontak-sukses-masuk {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Layout responsif ---------- */
+@media (max-width: 1024px) {
+  #kontak {
+    padding-block: 88px 96px;
+  }
+
+  .kontak__head {
+    margin-bottom: 64px;
+  }
+
+  .kontak__grid {
+    grid-template-columns: minmax(0, 1fr) 272px;
+    gap: 56px;
+  }
+
+  .kontak__panel-head,
+  .kontak__panel-body,
+  .kontak__panel-foot,
+  .kontak__field {
+    padding-inline: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .kontak__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+  }
+
+  .kontak__meta {
+    max-width: 520px;
+    padding-top: 0;
+  }
+
+  .kontak__item {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  #kontak {
+    padding-block: 64px 72px;
+  }
+
+  .kontak__head {
+    margin-bottom: 48px;
+  }
+
+  .kontak__judul {
+    margin-bottom: 16px;
+  }
+
+  .kontak__deskripsi {
+    font-size: 16px;
+  }
+
+  .kontak__grid {
+    gap: 48px;
+  }
+
+  .kontak__panel-head,
+  .kontak__panel-body,
+  .kontak__panel-foot,
+  .kontak__field {
+    padding-inline: 20px;
+  }
+
+  .kontak__panel-body {
+    padding-block: 20px;
+  }
+
+  .kontak__panel-judul--sub {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  #kontak {
+    padding-block: 56px 60px;
+  }
+
+  .kontak__head {
+    margin-bottom: 40px;
+  }
+
+  .kontak__kicker {
+    margin-bottom: 18px;
+  }
+
+  .kontak__panel-head,
+  .kontak__panel-body,
+  .kontak__panel-foot,
+  .kontak__field {
+    padding-inline: 16px;
+  }
+
+  .kontak__panel-head,
+  .kontak__panel-foot,
+  .kontak__field {
+    padding-block: 16px;
+  }
+
+  .kontak__meta {
+    padding-top: 16px;
+  }
+
+  .kontak__panel-body {
+    padding-block: 18px;
+  }
+
+  .kontak__panel-foot {
+    justify-content: flex-start;
+  }
+
+  .kontak__item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3px;
+  }
+
+  .kontak__textarea {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 380px) {
+  #kontak {
+    padding-inline: 20px;
+    padding-block: 48px 52px;
+  }
+
+  .kontak__panel-head,
+  .kontak__panel-body,
+  .kontak__panel-foot,
+  .kontak__field {
+    padding-inline: 14px;
+  }
+
+  .kontak__panel-head {
+    gap: 10px;
+  }
+}
+
+/* ---------- Hormati preferensi gerak ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #kontak *,
+  #kontak *::before,
+  #kontak *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
 /* Token diambil dari referensi dark theme, ditulis ulang untuk kebutuhan
    bagian Profil ini saja. */
 #profil {
@@ -496,7 +1166,7 @@ nav a {
   #profil *::after {
     transition-duration: 1ms;
 /* ------------------------------------------------------------------
-   Beranda ╬ô├ç├╢ CodeCraft Academy
+   Beranda ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬úΓö£┬║╬ô├╢┬ú╬ô├▓├│ CodeCraft Academy
    Tipografi dan token warna diturunkan dari sistem dark UI pada
    referensi: canvas near-black, panel berlapis, border putih
    transparan, teks putih soft + muted. Ditulis ulang dari nol,

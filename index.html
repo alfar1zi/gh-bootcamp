@@ -2,7 +2,7 @@
 <html lang="id" class="no-js">
 <head>
   <meta charset=UTF-8>
-  <title>Ini Aja ╬ô├ç├╢ Project CBL</title>
+  <title>Ini Aja ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬úΓö£┬║╬ô├╢┬ú╬ô├▓├│ Project CBL</title>
   <link rel=stylesheet href=style.css>
 </head>
 <body>
@@ -20,7 +20,107 @@
   <p>Belajar Coding Praktis, Bangun Proyek Nyata.</p>
 
   <main>
-    <!-- KONTEN BAGIANMU DI SINI -->
+    <section id="kontak" class="kontak" aria-labelledby="kontak-judul">
+      <div class="kontak__inner">
+
+        <header class="kontak__head">
+          <p class="kontak__kicker">Kontak</p>
+          <h2 class="kontak__judul" id="kontak-judul">Hubungi CodeCraft Academy</h2>
+          <p class="kontak__deskripsi">Punya pertanyaan soal program, kelas, atau kerja sama? Tulis pesanmu di formulir ini, tim kami akan membalas pada jam kerja.</p>
+        </header>
+
+        <div class="kontak__grid">
+
+          <div class="kontak__main">
+
+            <form class="kontak__panel" id="form-kontak" novalidate>
+              <div class="kontak__panel-head">
+                <h3 class="kontak__panel-judul-teks">Kirim pesan</h3>
+                <p class="kontak__panel-meta">Wajib diisi</p>
+              </div>
+
+              <div class="kontak__field">
+                <label class="kontak__label" for="kontak-nama">Nama</label>
+                <input class="kontak__input" type="text" id="kontak-nama" name="nama" placeholder="Nama lengkap" autocomplete="name" aria-required="true" aria-describedby="err-kontak-nama">
+                <p class="kontak__error" id="err-kontak-nama" role="alert"></p>
+              </div>
+
+              <div class="kontak__field">
+                <label class="kontak__label" for="kontak-email">Email</label>
+                <input class="kontak__input" type="email" id="kontak-email" name="email" placeholder="nama@email.com" autocomplete="email" aria-required="true" aria-describedby="err-kontak-email">
+                <p class="kontak__error" id="err-kontak-email" role="alert"></p>
+              </div>
+
+              <div class="kontak__field">
+                <div class="kontak__field-top">
+                  <label class="kontak__label" for="kontak-pesan">Pesan</label>
+                  <p class="kontak__hitung" id="kontak-hitung-pesan">0 / 600</p>
+                </div>
+                <textarea class="kontak__input kontak__textarea" id="kontak-pesan" name="pesan" rows="6" maxlength="600" placeholder="Ceritakan yang ingin kamu tanyakan" aria-required="true" aria-describedby="err-kontak-pesan kontak-hitung-pesan"></textarea>
+                <p class="kontak__error" id="err-kontak-pesan" role="alert"></p>
+              </div>
+
+              <div class="kontak__panel-foot">
+                <button class="kontak__submit" type="submit">Kirim pesan</button>
+              </div>
+            </form>
+
+            <div class="kontak__panel kontak__sukses" id="kontak-sukses" hidden>
+              <div class="kontak__panel-head">
+                <h3 class="kontak__sukses-judul" id="kontak-sukses-judul" tabindex="-1">
+                  <svg class="kontak__sukses-ikon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+                    <path d="M3.25 8.5l3 3 6.5-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  Pesan terkirim
+                </h3>
+              </div>
+
+              <div class="kontak__panel-body">
+                <p class="kontak__sukses-teks">Terima kasih, <span id="kontak-sukses-nama"></span>. Pesanmu sudah kami terima dan akan dibalas ke email yang kamu isi.</p>
+                <p class="kontak__sukses-catatan">Kalau belum ada balasan dalam dua hari kerja, kirim ulang pesanmu.</p>
+              </div>
+
+              <div class="kontak__panel-foot">
+                <button class="kontak__submit kontak__submit--ghost" type="button" id="kontak-ulang">Kirim pesan lain</button>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="kontak__meta" aria-labelledby="kontak-info-judul">
+
+            <h3 class="kontak__panel-judul" id="kontak-info-judul">Informasi</h3>
+            <ul class="kontak__list">
+              <li class="kontak__item">
+                <span class="kontak__item-label">Email</span>
+                <a class="kontak__item-nilai kontak__tautan" href="mailto:halo@codecraft.academy">halo@codecraft.academy</a>
+              </li>
+              <li class="kontak__item">
+                <span class="kontak__item-label">Jam kerja</span>
+                <span class="kontak__item-nilai">Senin sampai Jumat, 09.00 sampai 17.00 WIB</span>
+              </li>
+              <li class="kontak__item">
+                <span class="kontak__item-label">Balasan</span>
+                <span class="kontak__item-nilai">Satu kali 24 jam kerja</span>
+              </li>
+            </ul>
+
+            <h3 class="kontak__panel-judul kontak__panel-judul--sub">Ikuti</h3>
+            <ul class="kontak__daftar-tautan">
+              <li class="kontak__tautan-baris">
+                <a class="kontak__tautan" href="https://github.com/alfar1zi" target="_blank" rel="noopener noreferrer">GitHub<span class="kontak__panah" aria-hidden="true">&#8599;</span></a>
+              </li>
+              <li class="kontak__tautan-baris">
+                <a class="kontak__tautan" href="https://github.com/alfar1zi/gh-bootcamp/issues" target="_blank" rel="noopener noreferrer">Isu dan diskusi<span class="kontak__panah" aria-hidden="true">&#8599;</span></a>
+              </li>
+            </ul>
+
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
      <section>Beranda</section>
     <section id="profil" aria-labelledby="profil-judul">
       <div class="profil-kontainer">
@@ -403,6 +503,7 @@ Kirim PR sebelum Jumat.</code></pre>
       praktis dan proyek nyata bersama tim kami.
      </p>
   </main>
+  <script src="kontak.js" charset="utf-8"></script>
 
   <script src="profil.js"></script>
 </body>
