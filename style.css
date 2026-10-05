@@ -523,6 +523,7 @@ nav a {
 
 /* ---------- Reveal ---------- */
 @media (prefers-reduced-motion: no-preference) {
+
   .kontak__head,
   .kontak__grid {
     animation: kontak-masuk 220ms var(--k-ease) both;
@@ -538,6 +539,7 @@ nav a {
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: none;
@@ -554,6 +556,7 @@ nav a {
     opacity: 0;
     transform: translateY(4px);
   }
+
   to {
     opacity: 1;
     transform: none;
@@ -704,6 +707,7 @@ nav a {
 
 /* ---------- Hormati preferensi gerak ---------- */
 @media (prefers-reduced-motion: reduce) {
+
   #kontak *,
   #kontak *::before,
   #kontak *::after {
@@ -711,6 +715,9 @@ nav a {
     animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 1ms !important;
+  }
+}
+
 /* Token diambil dari referensi dark theme, ditulis ulang untuk kebutuhan
    bagian Profil ini saja. */
 #profil {
@@ -807,7 +814,7 @@ nav a {
   overflow: hidden;
 }
 
-.profil-kartu + .profil-kartu {
+.profil-kartu+.profil-kartu {
   border-top: 1px solid var(--profil-garis-1);
 }
 
@@ -955,7 +962,7 @@ nav a {
   padding-left: 18px;
 }
 
-.profil-fakta-baris + .profil-fakta-baris {
+.profil-fakta-baris+.profil-fakta-baris {
   border-left: 1px solid var(--profil-garis);
 }
 
@@ -1036,9 +1043,9 @@ nav a {
   border-bottom: 1px solid var(--profil-garis);
 }
 
-.profil-tabel thead th + th,
-.profil-tabel tbody th + td,
-.profil-tabel tbody td + td {
+.profil-tabel thead th+th,
+.profil-tabel tbody th+td,
+.profil-tabel tbody td+td {
   border-left: 1px solid var(--profil-garis);
 }
 
@@ -1115,7 +1122,7 @@ nav a {
     padding-top: 14px;
   }
 
-  .profil-fakta-baris + .profil-fakta-baris {
+  .profil-fakta-baris+.profil-fakta-baris {
     margin-top: 14px;
     border-top: 1px solid var(--profil-garis);
     border-left: 0;
@@ -1161,10 +1168,14 @@ nav a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   #profil *,
   #profil *::before,
   #profil *::after {
     transition-duration: 1ms;
+  }
+}
+
 /* ------------------------------------------------------------------
    Beranda ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬úΓö£┬║╬ô├╢┬ú╬ô├▓├│ CodeCraft Academy
    Tipografi dan token warna diturunkan dari sistem dark UI pada
@@ -1376,6 +1387,24 @@ main {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* --- Single-view navigation -------------------------------------- */
+
+main>section {
+  display: none;
+}
+
+main>section:first-child {
+  display: block;
+}
+
+main>section:target {
+  display: block;
+}
+
+main:has(> section:target)>section:first-child:not(:target) {
+  display: none;
 }
 
 /* --- Hero ----------------------------------------------------------- */
@@ -1678,7 +1707,7 @@ main {
   overflow: hidden;
 }
 
-.cc-tree-folder[aria-expanded="false"] + .cc-tree-list {
+.cc-tree-folder[aria-expanded="false"]+.cc-tree-list {
   display: none;
 }
 
@@ -1751,13 +1780,34 @@ main {
   tab-size: 2;
 }
 
-.t-tag { color: #7f8ce8; }
-.t-attr { color: #b4bcd0; }
-.t-str { color: #99d1a0; }
-.t-kw { color: #c39be8; }
-.t-fn { color: #7ec9e8; }
-.t-cmt { color: var(--cc-fg-4); }
-.t-h { color: #f7f8f8; font-weight: 680; }
+.t-tag {
+  color: #7f8ce8;
+}
+
+.t-attr {
+  color: #b4bcd0;
+}
+
+.t-str {
+  color: #99d1a0;
+}
+
+.t-kw {
+  color: #c39be8;
+}
+
+.t-fn {
+  color: #7ec9e8;
+}
+
+.t-cmt {
+  color: var(--cc-fg-4);
+}
+
+.t-h {
+  color: #f7f8f8;
+  font-weight: 680;
+}
 
 /* Output */
 
